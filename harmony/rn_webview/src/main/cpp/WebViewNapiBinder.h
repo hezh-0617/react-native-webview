@@ -57,6 +57,8 @@ namespace rnoh {
                   .addProperty("messagingModuleName", props->messagingModuleName)
                   .addProperty("shouldStartLoadWithRequestEnabled", props->shouldStartLoadWithRequestEnabled)
                   .addProperty("webviewDebuggingEnabled", props->webviewDebuggingEnabled)
+                  .addProperty("applicationNameForUserAgent", props->applicationNameForUserAgent)
+                  .addProperty("userAgent", props->userAgent)
                   .build();
             }
             return napiViewProps;

@@ -46,6 +46,8 @@ namespace rnoh {
         object.setProperty(rt, "messagingModuleName", "string");
         object.setProperty(rt, "shouldStartLoadWithRequestEnabled", "bool");
         object.setProperty(rt, "webviewDebuggingEnabled", "bool");
+        object.setProperty(rt, "applicationNameForUserAgent", "string");
+        object.setProperty(rt, "userAgent", "string");
         return object;
     }
 

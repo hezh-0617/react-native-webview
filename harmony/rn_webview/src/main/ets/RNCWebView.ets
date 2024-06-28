@@ -72,6 +72,7 @@ export interface WebViewProps extends ViewBaseProps {
   scrollEnabled: boolean
   incognito: boolean
   userAgent: string
+  applicationNameForUserAgent: string
   shouldStartLoadWithRequestEnabled: boolean
   originWhitelist: Array<string>
 }
@@ -743,6 +744,15 @@ export struct RNCWebView {
             } catch (error) {
               Logger.debug(TAG,
                 `[RNOH] setCustomUserAgent ErrorCode: ${error.code},  Message: ${error.message}, userAgent: ${this.descriptorWrapper.props.userAgent}`);
+            }
+          }
+          if (this.descriptorWrapper.props.applicationNameForUserAgent) {
+            try {
+              this.controller.setCustomUserAgent(this.controller.getUserAgent() +
+              this.descriptorWrapper.props.applicationNameForUserAgent);
+            } catch (error) {
+              Logger.debug(TAG,
+                `[RNOH] setCustomUserAgent ErrorCode: ${error.code},  Message: ${error.message}, applicationNameForUserAgent: ${this.descriptorWrapper.props.applicationNameForUserAgent}`);
             }
           }
         })
